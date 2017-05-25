@@ -1,0 +1,13 @@
+.login {
+	/*
+	position: relative;
+	left: calc(100vw - 34em);
+	margin-top: -5em;
+	width: 30em;
+	*/
+}
+
+.login .buttonGrid .ui.header {
+	color: gainsboro;
+	text-shadow: 0 4px 4px #1d2832;
+}
