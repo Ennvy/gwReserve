@@ -10,19 +10,19 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RoomsComponent } from './rooms/rooms.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ExercisesComponent,
-    LoginComponent,
-    NavigationComponent,
-    RoomsComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		ExercisesComponent,
+		LoginComponent,
+		NavigationComponent,
+		RoomsComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
