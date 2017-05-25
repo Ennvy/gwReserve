@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService, IUser } from "./../services/login-service.service";
 
 @Component({
 	selector: 'app-login',
@@ -6,7 +7,26 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-	constructor() { }
+	public loggedInUser:IUser;
 
-	ngOnInit() { }
+	constructor(private loginService:LoginService) { }
+
+	ngOnInit() {
+		this.init();
+	}
+
+	login() {
+		this.loginService.login();
+		this.init();
+	}
+
+	logout() {
+		this.loginService.logout();
+		this.init();
+	}
+
+	private init() {
+		this.loggedInUser = this.loginService.getLoggedInUser();
+		console.log(this.loggedInUser, "fetched");
+	}
 }
