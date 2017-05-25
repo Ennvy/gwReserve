@@ -5,6 +5,8 @@ import { ExercisesComponent } from "./exercises/exercises.component";
 import { LoginComponent } from "./login/login.component";
 import { RoomsComponent } from "./rooms/rooms.component";
 
+import { LoginGuard } from "./services/login-guard.service";
+
 // please note our Route interface provided by Angular team:
 // export interface Route {
 // 	path?: string;
@@ -42,7 +44,8 @@ const routes: Routes = [
 	},
 	{
 		path: "rooms/:id",
-		component: RoomsComponent
+		component: RoomsComponent,
+		canActivate: [ LoginGuard ]
 	},
 
 	// finally, add "catch-all" route, taking the place of "otherwise" from legacy Angular
@@ -55,7 +58,8 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [ RouterModule.forRoot(routes) ],
-	exports: [ RouterModule ]
+	exports: [ RouterModule ],
+	providers: [ LoginGuard ]
 })
 export class AppRoutingModule { }
 
