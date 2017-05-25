@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'app-navigation',
+	selector: 'gw-navigation',
 	templateUrl: './navigation.component.html',
 	styleUrls: ['./navigation.component.css']
 })
