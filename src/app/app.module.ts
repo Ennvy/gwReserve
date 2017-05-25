@@ -7,6 +7,8 @@ import { AppRoutingModule, routedComponents } from "./app.routing.module";
 import { AppComponent } from "./app.component";
 import { NavigationComponent } from "./navigation/navigation.component";
 
+import { LoginService } from "./services/login-service.service";
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -18,7 +20,9 @@ import { NavigationComponent } from "./navigation/navigation.component";
 		FormsModule,
 		AppRoutingModule
 	],
-	providers: [],
+	providers: [
+		LoginService
+	],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule { }
