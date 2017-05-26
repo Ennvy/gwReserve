@@ -6,6 +6,7 @@ import { LoginComponent } from "./login/login.component";
 import { RoomsComponent } from "./rooms/rooms.component";
 
 import { LoginGuard } from "./services/login-guard.service";
+import { DirtyFormGuard } from "./services/dirty-form-guard.service";
 
 // please note our Route interface provided by Angular team:
 // export interface Route {
@@ -60,6 +61,7 @@ const routes: Routes = [
 	imports: [ RouterModule.forRoot(routes) ],
 	exports: [ RouterModule ],
 	providers: [ LoginGuard ]
+	providers: [ LoginGuard, DirtyFormGuard ]
 })
 export class AppRoutingModule { }
 
