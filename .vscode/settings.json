@@ -1,6 +1,7 @@
 {
 	"files.exclude": {
 		"semantic": true,
+		"node_modules": true,
 
 		"**/.git": true,
 		"**/.svn": true,
