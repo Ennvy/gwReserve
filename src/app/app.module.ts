@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+
+import { NgModule } from "@angular/core";
 
 import { AppRoutingModule, routedComponents } from "./app.routing.module";
 import { RoomsModule } from "./rooms/rooms.module";
@@ -28,6 +29,8 @@ import { LoginService } from "./services/login-service.service";
 	providers: [
 		LoginService
 	],
-	bootstrap: [ AppComponent ]
+	bootstrap: [
+		AppComponent
+	]
 })
 export class AppModule { }
