@@ -7,7 +7,7 @@ import "rxjs/add/operator/do";
 import "rxjs/add/operator/map";
 
 @Component({
-	selector: "app-rooms",
+	selector: "gw-rooms",
 	templateUrl: "./rooms.component.html",
 	styleUrls: ["./rooms.component.css"]
 })
