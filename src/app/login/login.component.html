@@ -8,7 +8,6 @@
 				<h1 class="ui header">{{ loggedInUser?.displayName }}</h1>
 				<button class="ui large left attached button" (click)="login()" [disabled]="loggedInUser">Login</button>
 				<button class="ui large right attached button" (click)="logout()" [disabled]="loggedInUser === null">Logout</button>
-				<a href="" routerLink="/rooms/1337">Go to room</a>
 			</div>
 		</div>
 	</div>

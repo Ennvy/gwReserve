@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, CanDeactivate } from "@angular/router";
-
-import { CanComponentDeactivate } from "./../services/dirty-form-guard.service";
+import { ActivatedRoute } from "@angular/router";
 
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/map";
@@ -11,7 +9,7 @@ import "rxjs/add/operator/map";
 	templateUrl: "./rooms.component.html",
 	styleUrls: ["./rooms.component.css"]
 })
-export class RoomsComponent implements OnInit, CanComponentDeactivate {
+export class RoomsComponent implements OnInit {
 	public id: number;
 
 	// ActivatedRoute is provided by RouterModule
@@ -21,7 +19,7 @@ export class RoomsComponent implements OnInit, CanComponentDeactivate {
 		console.log("ActivatedRoute snapshot", this.route.snapshot.params);
 
 		// get a snapshot
-		this.id = parseInt(this.route.snapshot.params["id"]);
+		this.id = this.route.snapshot.params["id"];
 
 		console.log("Room ID is ", this.id, " via snapshot");
 
@@ -35,12 +33,8 @@ export class RoomsComponent implements OnInit, CanComponentDeactivate {
 				console.log("After map", params);
 			})
 			.subscribe(id => {
-				this.id = parseInt(id);
+				this.id = id;
 				console.log("Room ID is ", this.id, " via subscribe");
 			});
-	}
-
-	canDeactivate():boolean {
-		return window.confirm("Are you ready to leave this room?");
 	}
 }

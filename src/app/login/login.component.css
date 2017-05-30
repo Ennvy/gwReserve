@@ -1,10 +1,6 @@
 .login {
-	/*
-	position: relative;
-	left: calc(100vw - 34em);
-	margin-top: -5em;
-	width: 30em;
-	*/
+	width: 20em;
+	height: 5em;
 }
 
 .login .buttonGrid .ui.header {

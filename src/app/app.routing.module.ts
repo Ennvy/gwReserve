@@ -30,24 +30,20 @@ const routes: Routes = [
 	// let's add our "root" route
 	{
 		path: "",
-		component: LoginComponent
+		component: ExercisesComponent
 	},
 
-	// add specific routes
+	// add specific routes here
 	{
 		path: "exercises",
 		component: ExercisesComponent
-	},
-	{
-		path: "login",
-		component: LoginComponent
 	},
 
 	// finally, add "catch-all" route, taking the place of "otherwise" from legacy Angular
 	{
 		path: "**",
 		pathMatch: "full",
-		redirectTo: "login"
+		redirectTo: ""
 	}
 ];
 
