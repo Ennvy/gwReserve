@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import "rxjs/add/operator/do";
-import "rxjs/add/operator/map";
+import "rxjs/add/operator/map";	// adding in map, a piece of rxjs
+import "rxjs/add/operator/do";	// adding in do, a piece of rxjs
 
 @Component({
 	selector: "gw-rooms",

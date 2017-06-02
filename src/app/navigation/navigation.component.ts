@@ -23,18 +23,15 @@ export class NavigationComponent implements OnInit {
 		// add exercises link
 		this.navigationService.addNavigationItem(exercisesItem);
 
-		// fetch rooms
-		this.roomsService.fetchRoomsFromDB().then(rooms => {
-			for (let roomKey in rooms) {
+			for (let room of this.roomsService.rooms) {
 				const roomItem:INavigationItem = {
-					title : rooms[roomKey].name,
-					url   : `/rooms/${roomKey}`,
+					title : room.name,
+					url   : `/rooms/${room.name}`,
 					color : "green"
 				};
 
 				// add rooms
 				this.navigationService.addNavigationItem(roomItem);
 			}
-		});
 	}
 }

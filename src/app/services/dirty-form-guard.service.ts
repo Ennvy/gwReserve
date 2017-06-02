@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { CanDeactivate } from "@angular/router";
 
-export interface CanComponentDeactivate {
-	canDeactivate:() => boolean;
+export interface IDirtyCanDeactivate {
+	dirtyCanDeactivate: () => boolean;
 }
 
 @Injectable()
-export class DirtyFormGuard implements CanDeactivate<CanComponentDeactivate> {
-	canDeactivate(component:CanComponentDeactivate) {
-		return component.canDeactivate();
+export class DirtyFormGuard implements CanDeactivate<IDirtyCanDeactivate> {
+	canDeactivate(component:IDirtyCanDeactivate) {
+		return component.dirtyCanDeactivate();
 	}
 }

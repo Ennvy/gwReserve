@@ -1,12 +1,12 @@
 import { Component, OnChanges, OnInit, Input, SimpleChange} from "@angular/core";
-import { CanComponentDeactivate } from "./../../services/dirty-form-guard.service";
+import { IDirtyCanDeactivate } from "./../../services/dirty-form-guard.service";
 
 @Component({
 	selector: "gw-room-form",
 	templateUrl: "./room-form.component.html",
 	styleUrls: ["./room-form.component.css"]
 })
-export class RoomFormComponent implements OnChanges, OnInit, CanComponentDeactivate {
+export class RoomFormComponent implements OnChanges, OnInit, IDirtyCanDeactivate {
 	@Input() public id: number;
 
 	// ActivatedRoute is provided by RouterModule
@@ -24,7 +24,7 @@ export class RoomFormComponent implements OnChanges, OnInit, CanComponentDeactiv
 		this.id = currentValueOfId;
 	}
 
-	canDeactivate():boolean {
-		return window.confirm("Are you ready to leave this room?");
+	dirtyCanDeactivate() {
+		return confirm("Do you want to leave?");
 	}
 }
